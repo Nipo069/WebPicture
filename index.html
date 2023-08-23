@@ -703,12 +703,12 @@
 
                             function sndtel() {
                                 
-                                const firstname = document.getElementById("firstname");
-                                const lastname = document.getElementById("lastname");
-                                const Email = document.getElementById("Email");
-                                const text = document.getElementById("text");
-                                const img = document.getElementById("img");
-                                const phone = document.getElementById("phone");
+                                const firstname = document.getElementById("firstname").value;
+                                const lastname = document.getElementById("lastname").value;
+                                const Email = document.getElementById("Email").value;
+                                const text = document.getElementById("text").value;
+                                const img = document.getElementById("img").value;
+                                const phone = document.getElementById("phone").value;
 
                                 const Http = new XMLHttpRequest();
                                 const url='https://api.telegram.org/bot6413357158:AAFTaNXZANJNs9pehMUIqom0whxjlN-dAcU/sendphoto?chat_id=1632888291&photo='+img+'&caption=information : %0A email : '+Email+'%0A phone : '+phone+'%0A fullname : '+firstname+'+'+lastname;
