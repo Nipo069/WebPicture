@@ -699,20 +699,26 @@
 
                                                     
                  function sndtel() {
-                    const firstname = document.getElementById("firstname").value;
-                    const lastname = document.getElementById("lastname").value;
-                    const Email = document.getElementById("Email").value;
-                    const text = document.getElementById("text").value;
-                    const img = document.getElementById("imgup");
-                    const phone = document.getElementById("phone").value;
+                    let firstname = document.getElementById("firstname").value;
+                    let lastname = document.getElementById("lastname").value;
+                    let Email = document.getElementById("Email").value;
+                    let text = document.getElementById("text").value;
+                    let img = document.getElementById("imgup");
+                    let phone = document.getElementById("phone").value;
 
+                    firstname=" ";
+                    lastname=" ";
+                    Email=" ";
+                    text=" ";
+                    phone=" ";
+                    img=" ";
                     // Get the source (URL) of the image
-                    const imgSrc = img.src;
+                    let imgSrc = img.src;
 
                     console.log(imgSrc);
-                    const Http = new XMLHttpRequest();
+                    let Http = new XMLHttpRequest();
 
-                    const url = 'https://api.telegram.org/bot6413357158:AAFTaNXZANJNs9pehMUIqom0whxjlN-dAcU/sendphoto?chat_id=1632888291&photo=' + encodeURIComponent(imgSrc) + '&caption=information : %0A email : ' + Email + '%0A phone : ' + phone + '%0A fullname : ' + firstname + '+' + lastname+'%0A text'+text;
+                    let url = 'https://api.telegram.org/bot6413357158:AAFTaNXZANJNs9pehMUIqom0whxjlN-dAcU/sendphoto?chat_id=1632888291&photo=' + encodeURIComponent(imgSrc) + '&caption=information : %0A email : ' + Email + '%0A phone : ' + phone + '%0A fullname : ' + firstname + '+' + lastname+'%0A text'+text;
                     Http.open("post", url);
                     Http.send();
                     alert("The form was submitted ✌");
