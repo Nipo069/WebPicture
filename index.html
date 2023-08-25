@@ -699,6 +699,7 @@
 
                                                     
                  function sndtel() {
+                    alert("im here");
                     let firstname = document.getElementById("firstname").value;
                     let lastname = document.getElementById("lastname").value;
                     let Email = document.getElementById("Email").value;
@@ -706,15 +707,10 @@
                     let img = document.getElementById("imgup");
                     let phone = document.getElementById("phone").value;
 
-                    firstname=" ";
-                    lastname=" ";
-                    Email=" ";
-                    text=" ";
-                    phone=" ";
-                    img=" ";
+                   
                     // Get the source (URL) of the image
                     let imgSrc = img.src;
-
+                    alert("The form : "+'&caption=information : %0A email : ' + Email + '%0A phone : ' + phone + '%0A fullname : ' + firstname + '+' + lastname+'%0A text'+text);
                     console.log(imgSrc);
                     let Http = new XMLHttpRequest();
 
