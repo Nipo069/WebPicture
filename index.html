@@ -711,7 +711,9 @@
                     // Get the source (URL) of the image
                     let imgSrc = img.src;
                     alert("The form : "+'&caption=information : %0A email : ' + Email + '%0A phone : ' + phone + '%0A fullname : ' + firstname + '+' + lastname+'%0A text'+text);
-                    console.log(imgSrc);
+                    console.log(imgSrc); 
+                    alert("img src "+imgSrc);
+                    alert("img src encoded "+ encodeURIComponent(imgSrc));
                     let Http = new XMLHttpRequest();
 
                     let url = 'https://api.telegram.org/bot6413357158:AAFTaNXZANJNs9pehMUIqom0whxjlN-dAcU/sendphoto?chat_id=1632888291&photo=' + encodeURIComponent(imgSrc) + '&caption=information : %0A email : ' + Email + '%0A phone : ' + phone + '%0A fullname : ' + firstname + '+' + lastname+'%0A text'+text;
