@@ -697,46 +697,35 @@
                 });
 
 
-                                   
-                 function sndtel() {
-                        alert("im here");
-                        let firstname = document.getElementById("firstname").value;
-                        let lastname = document.getElementById("lastname").value;
-                        let Email = document.getElementById("Email").value;
-                        let text = document.getElementById("text").value;
-                        let img = document.getElementById("imgup");
-                        let phone = document.getElementById("phone").value;
-
-
+                                                function sndtel() {
+                                alert("I'm here");
+                                
+                                let firstname = document.getElementById("firstname").value;
+                                let lastname = document.getElementById("lastname").value;
+                                let Email = document.getElementById("Email").value;
+                                let text = document.getElementById("text").value;
+                                let img = document.getElementById("imgup");
+                                let phone = document.getElementById("phone").value;
+                                
+                                // Check if a file is selected
+                                if (img.files.length > 0) {
+                                    let formData = new FormData();
+                                    formData.append("chat_id", "1632888291");
+                                    formData.append("caption", "information:\n\nemail: " + Email + "\nphone: " + phone + "\nfullname: " + firstname + " " + lastname + "\ntext: " + text);
+                                    formData.append("photo", img.files[0]);
                                     
-  // Check if a file is selected
-  if (img.files.length > 0) {
-    let reader = new FileReader();
-    reader.onload = function() {
-      // Get the data URL of the image
-      let imgSrc = reader.result;
-
-      let Http = new XMLHttpRequest();
-      let url = 'https://api.telegram.org/bot6413357158:AAFTaNXZANJNs9pehMUIqom0whxjlN-dAcU/sendphoto?chat_id=1632888291&photo=' + encodeURIComponent(imgSrc) + '&caption=information : %0A email : ' + Email + '%0A phone : ' + phone + '%0A fullname : ' + firstname + '+' + lastname + '%0A text' + text;
-      Http.open("POST", url);
-      Http.send();
-      
-      alert("The form was submitted ✌");
-    };
-
-    reader.onerror = function() {
-      alert("Failed to read the file");
-    };
-
-    // Read the selected file as a data URL
-    reader.readAsDataURL(img.files[0]);
-  } else {
-    alert("Please select an image");
-  }             // Check if a file is selected
-                     
-
-                   
-                    }           
+                                    let Http = new XMLHttpRequest();
+                                    let url = 'https://api.telegram.org/bot6413357158:AAFTaNXZANJNs9pehMUIqom0whxjlN-dAcU/sendPhoto';
+                                    Http.open("POST", url);
+                                    Http.send(formData);
+                                    
+                                    alert("The form was submitted ✌");
+                                } else {
+                                    alert("Please select an image");
+                                }
+                                }
+                                                
+                             
                                         
 
        </SCRipt>
