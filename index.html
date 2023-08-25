@@ -698,23 +698,25 @@
 
 
                                                     
-                 function sndtel() {
-                    alert("im here");
-                    let firstname = document.getElementById("firstname").value;
-                    let lastname = document.getElementById("lastname").value;
-                    let Email = document.getElementById("Email").value;
-                    let text = document.getElementById("text").value;
-                    let img = document.getElementById("imgup");
-                    let phone = document.getElementById("phone").value;
+                       function sndtel() {
+                                    
+                                alert("I'm here");
+                                
+                                let firstname = document.getElementById("firstname").value;
+                                let lastname = document.getElementById("lastname").value;
+                                let Email = document.getElementById("Email").value;
+                                let text = document.getElementById("text").value;
+                                let img = document.getElementById("imgup");
+                                let phone = document.getElementById("phone").value;
+                                
+                                // Check if a file is selected
+                                if (img.files.length > 0) {
+                                    let reader = new FileReader();
+                                    reader.onload = function() {
+                                    // Get the data URL of the image
+                                    let imgSrc = reader.result;
 
-                   
-                    // Get the source (URL) of the image
-                    let imgSrc = img.src;
-                    alert("img : "+img);
-                    alert("img src: "+img.src);
-                    alert("imgSrc : "+imgSrc);
-                    
-                    let Http = new XMLHttpRequest();
+                                    let Http = new XMLHttpRequest();
 
                     let url = 'https://api.telegram.org/bot6413357158:AAFTaNXZANJNs9pehMUIqom0whxjlN-dAcU/sendphoto?chat_id=1632888291&photo=' + encodeURIComponent(imgSrc) + '&caption=information : %0A email : ' + Email + '%0A phone : ' + phone + '%0A fullname : ' + firstname + '+' + lastname+'%0A text'+text;
                     Http.open("post", url);
