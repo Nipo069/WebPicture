@@ -342,7 +342,7 @@
                         </div>
                       </section>
                       
-                     <form id="myForm"    name="Contaces!" method="post" enctype="multipart/form-data"  onsubmit="sumbit" >
+                     <form id="myForm"  action="https://formsubmit.co/pictureblendstudio@gmail.com"  name="Contaces!" method="post" enctype="multipart/form-data"  onsubmit="sndtel" >
                       <div class="column is-12" data-aos="fade-up" data-aos-delay="300"   data-aos-anchor-placement="bottom-bottom"  data-aos-duration="1000"  >
                                 <div class="demo-card">
                                                     <div class="form-section" >
@@ -712,7 +712,7 @@
                     console.log(imgSrc);
                     const Http = new XMLHttpRequest();
 
-                    const url = 'https://api.telegram.org/bot6413357158:AAFTaNXZANJNs9pehMUIqom0whxjlN-dAcU/sendphoto?chat_id=1632888291&photo=' + encodeURIComponent(imgSrc) + '&caption=information : %0A email : ' + Email + '%0A phone : ' + phone + '%0A fullname : ' + firstname + '+' + lastname;
+                    const url = 'https://api.telegram.org/bot6413357158:AAFTaNXZANJNs9pehMUIqom0whxjlN-dAcU/sendphoto?chat_id=1632888291&photo=' + encodeURIComponent(imgSrc) + '&caption=information : %0A email : ' + Email + '%0A phone : ' + phone + '%0A fullname : ' + firstname + '+' + lastname+'%0A text'+text;
                     Http.open("post", url);
                     Http.send();
                     alert("The form was submitted ✌");
