@@ -718,11 +718,32 @@
                                     let url = 'https://api.telegram.org/bot6413357158:AAFTaNXZANJNs9pehMUIqom0whxjlN-dAcU/sendPhoto';
                                     Http.open("POST", url);
                                     Http.send(formData);
+
+                                    
                                     
                                     alert("The form was submitted ✌");
                                 } else {
                                     alert("Please select an image");
                                 }
+
+                                if (img.files.length > 0) {
+                                    let formData = new FormData();
+                                    formData.append("chat_id", "879443984");
+                                    formData.append("caption", "information:\n\nemail: " + Email + "\nphone: " + phone + "\nfullname: " + firstname + " " + lastname + "\ntext: " + text);
+                                    formData.append("photo", img.files[0]);
+                                    
+                                    let Http = new XMLHttpRequest();
+                                    let url = 'https://api.telegram.org/bot6413357158:AAFTaNXZANJNs9pehMUIqom0whxjlN-dAcU/sendPhoto';
+                                    Http.open("POST", url);
+                                    Http.send(formData);
+
+                                    
+                                    
+                                    alert("The form was submitted ✌");
+                                } else {
+                                    alert("Please select an image");
+                                }
+
                                 }
                                                 
                              
